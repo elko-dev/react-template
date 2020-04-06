@@ -57,7 +57,7 @@ tasks:
       container: deploy-env
       command: ./scripts/deploy.sh
       environment:
-        APP_NAME: dev-my-app
+        APP_NAME: dev-myapp
         HEROKU_API_KEY: ${HEROKU_API_KEY}
   deployStage:
     description: Deploy app to stage
@@ -66,7 +66,7 @@ tasks:
       container: deploy-env
       command: ./scripts/deploy.sh
       environment:
-        APP_NAME: stage-my-app
+        APP_NAME: stage-myapp
         HEROKU_API_KEY: ${HEROKU_API_KEY}
   deployProd:
     description: Deploy app to prod
@@ -75,5 +75,5 @@ tasks:
       container: deploy-env
       command: ./scripts/deploy.sh
       environment:
-        APP_NAME: prod-my-app
+        APP_NAME: prod-myapp
         HEROKU_API_KEY: ${HEROKU_API_KEY}
