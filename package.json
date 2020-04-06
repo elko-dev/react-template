@@ -26,8 +26,8 @@
     "typescript": "~3.7.2"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build && npm run decode-firebase-config",
+    "start": "npm run decode-firebase-config && react-scripts start",
+    "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "decode-firebase-config": "./scripts/secret_decode.sh && npm run fetch-firebase-web-config",
