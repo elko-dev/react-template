@@ -1,4 +1,4 @@
-import * as firebase from "firebase/app";
+import * as firebase from "firebase";
 
 const serviceAccount = require("./web-spawn-platform.json");
 
