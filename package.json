@@ -30,6 +30,7 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
+    "deploy": "./scripts/deploy.sh $npm_package_config_projectName",
     "decode-firebase-config": "./scripts/secret_decode.sh && npm run fetch-firebase-web-config",
     "fetch-firebase-web-config": "node create.config.files.js $npm_package_config_projectName $npm_package_config_webAppName"
   },
