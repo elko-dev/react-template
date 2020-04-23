@@ -15,4 +15,4 @@ fi
 
 gem install dpl
 
-dpl --provider=heroku --app="$APP_NAME" --api-key=$HEROKU_API_KEY
+dpl --provider=heroku --app="$APP_NAME-$ENV" --api-key=$HEROKU_API_KEY
