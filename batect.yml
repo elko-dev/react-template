@@ -37,6 +37,7 @@ tasks:
       command: ./scripts/test.sh
       environment:
         CI: "true"
+        AUTH_CONFIG: ${AUTH_CONFIG}
   testWatch:
     description: Run unit tests for application
     group: Test tasks
