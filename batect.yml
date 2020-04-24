@@ -53,6 +53,8 @@ tasks:
         container: 3000
       container: build-env
       command: ./scripts/local.sh
+      environment:
+        AUTH_CONFIG: ${AUTH_CONFIG}
   deployDev:
     description: Deploy app to dev
     group: Deploy tasks
