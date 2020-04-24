@@ -1,6 +1,8 @@
-import * as firebase from "firebase";
+import firebase from 'firebase/app';
 
-const serviceAccount = require("./web-spawn-platform.json");
+import * as _webServiceAccountConfig from '../config/web-spawn-platform.json';
+require('firebase/auth');
 
-const app = firebase.initializeApp(serviceAccount);
+const app = firebase.initializeApp(require('../config/web-spawn-platform.json'));
+
 export const firebaseAuth = app.auth();

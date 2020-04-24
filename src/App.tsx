@@ -1,25 +1,35 @@
 import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+
+import { UserStore } from './stores/UserStore';
+import SignupPage from './component/auth/Signup';
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link,
+  Redirect
+} from "react-router-dom";
+import LoginPage from './component/auth/Login';
 
 const App: React.FC = () => {
+  const userStore: UserStore = new UserStore();
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div>
+
+        {/* A <Switch> looks through its children <Route>s and
+            renders the first one that matches the current URL. */}
+        <Switch>
+          <Route path="/signup">
+            <SignupPage userStore={userStore} />
+          </Route>
+          <Route path="/login">
+            <LoginPage userStore={userStore} />
+          </Route>
+        </Switch>
+      </div>
+      <Redirect to="/signup" />
+    </Router>
   );
 }
 

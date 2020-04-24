@@ -1,8 +1,8 @@
 {
   "name": "myapp",
   "config": {
-    "projectName": "myapp",
-    "webAppName": "1:1095344010247:web:6e16064718094a3b8a66a2"
+    "projectName": "spawnproject2322",
+    "webAppName": "1:306598093690:web:087635d2c5e85d45ba2cc3"
   },
   "version": "0.1.0",
   "private": true,
@@ -15,12 +15,19 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
+    "@types/react-router": "^5.1.5",
+    "@types/react-router-dom": "^5.1.4",
     "apollo-boost": "^0.4.7",
     "firebase": "^7.13.2",
+    "firebase-admin": "^8.11.0",
     "googleapis": "^48.0.0",
+    "graphql-request": "^1.8.2",
+    "http2": "^3.3.7",
     "react": "^16.12.0",
     "react-apollo": "^3.1.3",
     "react-dom": "^16.12.0",
+    "react-router": "^5.1.2",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "^3.4.1",
     "request-promise": "^4.2.5",
     "typescript": "~3.7.2"
@@ -48,5 +55,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/plugin-transform-typescript": "^7.9.4"
   }
 }
