@@ -8,6 +8,7 @@ CONFIG_DIR="$SCRIPT_DIR/../config"
 
 if [[ -z "${AUTH_CONFIG}" ]]; then
   echo "No firebase config found..."
+  exit 1
 else
   rm -rf "$CONFIG_DIR"
   mkdir "$CONFIG_DIR"
