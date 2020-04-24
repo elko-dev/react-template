@@ -27,6 +27,8 @@ tasks:
     run:
       container: build-env
       command: ./scripts/build.sh
+      environment:
+        AUTH_CONFIG: ${AUTH_CONFIG}
   test:
     description: Run unit tests for application
     group: Test tasks
