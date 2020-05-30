@@ -62,6 +62,10 @@ class LoginPage extends React.Component<Props, State> {
             </form>
           </div>
 
+          <div>
+            Don't have an account yet? Sign up <a href="/signup">here</a>.
+          </div>
+
           {this.state.loginError && (
             <div style={errorBlock}>{this.state.loginError}</div>
           )}

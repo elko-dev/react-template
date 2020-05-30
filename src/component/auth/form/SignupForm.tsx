@@ -91,6 +91,10 @@ export default class SignupForm extends React.Component<Props, State> {
             </div>
           </form>
         </div>
+
+        <div>
+          Already have an account? Log in <a href="/login">here</a>.
+        </div>
       </div>
     );
   }
