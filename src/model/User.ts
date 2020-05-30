@@ -4,8 +4,8 @@ export class User {
   public readonly firstName: string;
   public readonly lastName: string;
   public readonly phoneNumber: string;
-  public readonly createDate: Date;
-  public readonly updateDate: Date;
+  public readonly createDate: string;
+  public readonly updateDate: string;
 
   public constructor(params: Partial<User> = {}) {
     const {
@@ -23,7 +23,7 @@ export class User {
     this.firstName = firstName;
     this.lastName = lastName;
     this.phoneNumber = phoneNumber;
-    this.createDate = new Date(createDate);
-    this.updateDate = new Date(updateDate);
+    this.createDate = createDate;
+    this.updateDate = updateDate;
   }
 }
