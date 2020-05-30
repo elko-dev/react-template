@@ -1,96 +1,80 @@
-import * as React from 'react';
-import { Redirect } from 'react-router';
+import React, { useState } from 'react';
+import { useHistory, useLocation } from 'react-router';
 import { UserStore } from '../../stores/UserStore';
 import { User } from '../../model/User';
-
-interface State {
-  loginError: string | null;
-  authenticated: boolean;
-  email?: string;
-  password?: string;
-}
 
 interface Props {
   userStore: UserStore;
 }
 
-class LoginPage extends React.Component<Props, State> {
-  public state: State = {
-    loginError: null,
-    authenticated: Boolean(this.props.userStore.currentUser),
-  };
+interface LocationState {
+  from?: Location;
+}
 
-  public render() {
-    return this.state.authenticated ? (
-      <Redirect to="/" />
-    ) : (
-      <div style={containerStyle}>
-        <div style={rightContainerStyle}></div>
-        <div style={leftContainerStyle}>
-          <h1>Elko</h1>
-          <div>Log into Admin portal</div>
+function LoginPage(props: Props) {
+  const history = useHistory();
+  const location = useLocation<LocationState>();
+  const [loginError, setLoginError] = useState<string | null>(null);
+  const [email, setEmail] = useState<string | null>(null);
+  const [password, setPassword] = useState<string | null>(null);
+  const handleLogin = async () => {
+    const from = location.state.from || { pathname: '/' };
 
-          <div style={loginForm}>
-            <form style={{ width: 400 }}>
-              <div style={formField}>
-                <input
-                  onChange={(e) => this.setState({ email: e.target.value })}
-                  style={inputStyle}
-                  type="email"
-                  placeholder="Email"
-                  autoComplete="email"
-                />
-              </div>
-              <div style={formField}>
-                <input
-                  onChange={(e) => this.setState({ password: e.target.value })}
-                  style={inputStyle}
-                  type="password"
-                  placeholder="Password"
-                  autoComplete="current-password"
-                />
-              </div>
-              <div style={formField}>
-                <button
-                  style={submitBtn}
-                  type="button"
-                  onClick={() => this.handleLogin()}
-                >
-                  Login
-                </button>
-              </div>
-            </form>
-          </div>
-
-          <div>
-            Don't have an account yet? Sign up <a href="/signup">here</a>.
-          </div>
-
-          {this.state.loginError && (
-            <div style={errorBlock}>{this.state.loginError}</div>
-          )}
-        </div>
-      </div>
-    );
-  }
-
-  private handleLogin = async () => {
     try {
-      const user: User = await this.props.userStore.login(
-        this.state.email!,
-        this.state.password!
-      );
+      const user: User = await props.userStore.login(email!, password!);
+
       console.log('Logged in user ', user);
-      this.setState({
-        authenticated: true,
-      });
+
+      history.replace(from);
     } catch (error) {
       console.log(error);
-      this.setState({
-        loginError: error.message,
-      });
+      setLoginError(error.errorMessage);
     }
   };
+
+  return (
+    <div style={containerStyle}>
+      <div style={rightContainerStyle}></div>
+      <div style={leftContainerStyle}>
+        <h1>Elko</h1>
+        <div>Log into Admin portal</div>
+
+        <div style={loginForm}>
+          <form style={{ width: 400 }}>
+            <div style={formField}>
+              <input
+                onChange={(e) => setEmail(e.target.value)}
+                style={inputStyle}
+                type="email"
+                placeholder="Email"
+                autoComplete="email"
+              />
+            </div>
+            <div style={formField}>
+              <input
+                onChange={(e) => setPassword(e.target.value)}
+                style={inputStyle}
+                type="password"
+                placeholder="Password"
+                autoComplete="current-password"
+              />
+            </div>
+            <div style={formField}>
+              <button style={submitBtn} type="button" onClick={handleLogin}>
+                Login
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div>
+          Don't have an account yet? Sign up <a href="/signup">here</a>.
+        </div>
+
+        {loginError && <div style={errorBlock}>{loginError}</div>}
+      </div>
+    </div>
+  );
 }
 
 const rightContainerStyle: React.CSSProperties = {
