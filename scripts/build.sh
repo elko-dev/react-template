@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-yarn install && yarn build
+npm install && npm run build
