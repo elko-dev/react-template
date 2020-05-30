@@ -7,8 +7,8 @@ import {
   Switch,
   Route,
   Link,
-  Redirect
-} from "react-router-dom";
+  Redirect,
+} from 'react-router-dom';
 import LoginPage from './component/auth/Login';
 
 const App: React.FC = () => {
@@ -16,7 +16,6 @@ const App: React.FC = () => {
   return (
     <Router>
       <div>
-
         {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
         <Switch>
@@ -31,6 +30,6 @@ const App: React.FC = () => {
       <Redirect to="/signup" />
     </Router>
   );
-}
+};
 
 export default App;

@@ -38,7 +38,7 @@
     "test": "react-scripts test --watchAll=false",
     "prettier:base": "prettier --parser typescript",
     "prettier": "npm run prettier:base -- --list-different \"src/**/*.{ts,tsx,js}\"",
-    "prettier:fix": "npm run prettier:base -- --loglevel warn --write \"src/**/*.ts\"",
+    "prettier:fix": "npm run prettier:base -- --loglevel warn --write \"src/**/*.{ts,tsx,js}\"",
     "lint": "npx eslint 'src/**/*.{ts,tsx,js}' -c ./eslintconfig.json",
     "lint:fix": "npm run lint -- --fix",
     "eject": "react-scripts eject",
