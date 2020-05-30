@@ -36,6 +36,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --watchAll=false",
+    "prettier:base": "prettier --parser typescript",
+    "prettier": "npm run prettier:base -- --list-different \"src/**/*.{ts,tsx,js}\"",
+    "prettier:fix": "npm run prettier:base -- --loglevel warn --write \"src/**/*.ts\"",
     "eject": "react-scripts eject",
     "deploy": "./scripts/deploy.sh $npm_package_config_projectName",
     "postinstall": "npm run decode-firebase-config",
@@ -58,6 +61,7 @@
     ]
   },
   "devDependencies": {
-    "@babel/plugin-transform-typescript": "^7.9.4"
+    "@babel/plugin-transform-typescript": "^7.9.4",
+    "prettier": "^2.0.5"
   }
 }
