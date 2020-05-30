@@ -1,7 +1,5 @@
-// import './Login.css';
 import * as React from 'react';
 import { Redirect } from 'react-router';
-// @ts-ignore
 import { UserStore } from '../../stores/UserStore';
 import { User } from '../../model/User';
 
@@ -19,17 +17,17 @@ interface Props {
 class LoginPage extends React.Component<Props, State> {
   public state: State = {
     loginError: null,
-    authenticated: false,
+    authenticated: Boolean(this.props.userStore.currentUser),
   };
 
   public render() {
     return this.state.authenticated ? (
-      <Redirect to="/signup" />
+      <Redirect to="/" />
     ) : (
       <div style={containerStyle}>
         <div style={rightContainerStyle}></div>
         <div style={leftContainerStyle}>
-          <div>Elko</div>
+          <h1>Elko</h1>
           <div>Log into Admin portal</div>
 
           <div style={loginForm}>
@@ -110,8 +108,7 @@ const loginForm: React.CSSProperties = {
   display: 'flex',
   justifyContent: 'center',
   alignItems: 'center',
-  padding: '25px 25px 0',
-  // margin: '20px 20px 0'
+  marginTop: 30,
 };
 
 const inputStyle: React.CSSProperties = {

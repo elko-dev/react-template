@@ -6,7 +6,7 @@ import { User } from '../../model/User';
 import { BrowserRouterProps, Redirect } from 'react-router-dom';
 
 interface State {
-  signedIn: boolean;
+  authenticated: boolean;
 }
 
 interface Props extends BrowserRouterProps {
@@ -15,12 +15,12 @@ interface Props extends BrowserRouterProps {
 
 class SignupPage extends React.Component<Props, State> {
   public state: State = {
-    signedIn: false,
+    authenticated: Boolean(this.props.userStore.currentUser),
   };
 
   public render() {
-    return this.state.signedIn ? (
-      <Redirect to="/login" />
+    return this.state.authenticated ? (
+      <Redirect to="/" />
     ) : (
       <div style={containerStyle}>
         <SignupForm
@@ -49,7 +49,7 @@ class SignupPage extends React.Component<Props, State> {
       );
       console.log('Created user ', user);
       this.setState({
-        signedIn: true,
+        authenticated: true,
       });
     } catch (errors) {
       console.log(errors);

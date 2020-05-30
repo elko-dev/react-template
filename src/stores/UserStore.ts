@@ -3,7 +3,7 @@ import { UserService } from '../service/UserService';
 import { firebaseAuth } from '../config/auth.config';
 export class UserStore {
   private userService: UserService = new UserService();
-  public user: User | null = null;
+  private user: User | null = null;
 
   public async setup(): Promise<void> {
     if (firebaseAuth.currentUser !== null) {
@@ -31,7 +31,6 @@ export class UserStore {
 
   public async login(email: string, password: string): Promise<User> {
     await firebaseAuth.signInWithEmailAndPassword(email, password);
-
     const user: User = await this.userService.getAuthenticatedUser();
     this.user = user;
 
@@ -86,7 +85,9 @@ export class UserStore {
       phoneNumber,
       password
     );
+
     await this.login(email, password);
+
     return user;
   }
 
