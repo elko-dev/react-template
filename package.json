@@ -76,14 +76,13 @@
   "husky": {
     "hooks": {
       "pre-commit": "lint-staged",
-      "pre-push": "npm run build"
+      "pre-push": "npm test && npm run build"
     }
   },
   "lint-staged": {
     "*.ts": [
       "npm run prettier:fix",
-      "npm run lint:fix",
-      "git add"
+      "npm run lint:fix"
     ]
   }
 }
