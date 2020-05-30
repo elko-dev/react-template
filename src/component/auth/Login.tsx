@@ -54,7 +54,7 @@ class LoginPage extends React.Component<Props, State> {
                 <button
                   style={submitBtn}
                   type="button"
-                  onClick={(e) => this.handleLogin()}
+                  onClick={() => this.handleLogin()}
                 >
                   Login
                 </button>

@@ -72,7 +72,7 @@ export default class SignupForm extends React.Component<Props, State> {
               <button
                 style={submitBtn}
                 type="button"
-                onClick={(e) => {
+                onClick={() => {
                   this.props.signUpSuccess(
                     this.state.email,
                     this.state.password,
