@@ -41,7 +41,7 @@ export default class SignupForm extends React.Component<Props, State> {
                 onChange={(e) => this.setState({ firstName: e.target.value })}
                 style={inputStyle}
                 type="text"
-                placeholder="Firstname"
+                placeholder="First name"
               />
             </div>
             <div style={formField}>
@@ -49,7 +49,7 @@ export default class SignupForm extends React.Component<Props, State> {
                 onChange={(e) => this.setState({ lastName: e.target.value })}
                 style={inputStyle}
                 type="text"
-                placeholder="Lastname"
+                placeholder="Last name"
               />
             </div>
             <div style={formField}>
@@ -57,7 +57,7 @@ export default class SignupForm extends React.Component<Props, State> {
                 onChange={(e) => this.setState({ phoneNumber: e.target.value })}
                 style={inputStyle}
                 type="text"
-                placeholder="Phonenumber"
+                placeholder="Phone number"
               />
             </div>
             <div style={formField}>
