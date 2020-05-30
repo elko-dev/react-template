@@ -38,8 +38,9 @@ class LoginPage extends React.Component<Props, State> {
                 <input
                   onChange={(e) => this.setState({ email: e.target.value })}
                   style={inputStyle}
-                  type="text"
-                  placeholder="Username"
+                  type="email"
+                  placeholder="Email"
+                  autoComplete="email"
                 />
               </div>
               <div style={formField}>
@@ -48,6 +49,7 @@ class LoginPage extends React.Component<Props, State> {
                   style={inputStyle}
                   type="password"
                   placeholder="Password"
+                  autoComplete="current-password"
                 />
               </div>
               <div style={formField}>

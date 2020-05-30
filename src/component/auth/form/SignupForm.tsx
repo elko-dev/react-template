@@ -24,8 +24,7 @@ export default class SignupForm extends React.Component<Props, State> {
   public render() {
     return (
       <div style={this.props.style}>
-        <div style={{ textAlign: 'center' }}>SignUp</div>
-
+        <h1 style={{ textAlign: 'center' }}>Sign Up</h1>
         <div style={loginForm}>
           <form style={{ width: 400 }}>
             <div style={formField}>
@@ -34,6 +33,7 @@ export default class SignupForm extends React.Component<Props, State> {
                 style={inputStyle}
                 type="text"
                 placeholder="Email"
+                autoComplete="email"
               />
             </div>
             <div style={formField}>
@@ -42,6 +42,7 @@ export default class SignupForm extends React.Component<Props, State> {
                 style={inputStyle}
                 type="text"
                 placeholder="First name"
+                autoComplete="given-name"
               />
             </div>
             <div style={formField}>
@@ -50,6 +51,7 @@ export default class SignupForm extends React.Component<Props, State> {
                 style={inputStyle}
                 type="text"
                 placeholder="Last name"
+                autoComplete="family-name"
               />
             </div>
             <div style={formField}>
@@ -58,6 +60,7 @@ export default class SignupForm extends React.Component<Props, State> {
                 style={inputStyle}
                 type="text"
                 placeholder="Phone number"
+                autoComplete="tel"
               />
             </div>
             <div style={formField}>
@@ -66,6 +69,7 @@ export default class SignupForm extends React.Component<Props, State> {
                 style={inputStyle}
                 type="password"
                 placeholder="Password"
+                autoComplete="current-password"
               />
             </div>
             <div style={formField}>
