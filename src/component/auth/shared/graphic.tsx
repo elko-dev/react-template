@@ -12,6 +12,7 @@ export default class Graphic extends React.Component<Props, State> {
     return (
       <div style={this.props.style}>
         <img
+          alt="feeling proud"
           src={graphic}
           height="350"
           width="350"

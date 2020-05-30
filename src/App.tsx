@@ -1,12 +1,10 @@
 import React from 'react';
-
 import { UserStore } from './stores/UserStore';
 import SignupPage from './component/auth/Signup';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
-  Link,
   Redirect,
 } from 'react-router-dom';
 import LoginPage from './component/auth/Login';

@@ -30,15 +30,12 @@ export class UserStore {
   }
 
   public async login(email: string, password: string): Promise<User> {
-    try {
-      await firebaseAuth.signInWithEmailAndPassword(email, password);
+    await firebaseAuth.signInWithEmailAndPassword(email, password);
 
-      const user: User = await this.userService.getAuthenticatedUser();
-      this.user = user;
-      return user;
-    } catch (errors) {
-      throw errors;
-    }
+    const user: User = await this.userService.getAuthenticatedUser();
+    this.user = user;
+
+    return user;
   }
 
   public googleLogin = async (): Promise<User> => {
