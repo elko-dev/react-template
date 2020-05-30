@@ -2,4 +2,4 @@
 
 set -euo pipefail
 
-npm install && npm test
+npm ci && npm test
