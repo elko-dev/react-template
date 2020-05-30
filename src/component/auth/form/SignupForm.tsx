@@ -11,7 +11,7 @@ interface State {
 interface Props {
   style: React.CSSProperties;
   userStore: UserStore;
-  signUpSuccess: (
+  handleSignup: (
     email: string,
     password: string,
     firstName: string,
@@ -77,7 +77,7 @@ export default class SignupForm extends React.Component<Props, State> {
                 style={submitBtn}
                 type="button"
                 onClick={() => {
-                  this.props.signUpSuccess(
+                  this.props.handleSignup(
                     this.state.email,
                     this.state.password,
                     this.state.firstName,

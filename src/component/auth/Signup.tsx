@@ -26,7 +26,7 @@ class SignupPage extends React.Component<Props, State> {
         <SignupForm
           style={leftContainerStyle}
           userStore={this.props.userStore}
-          signUpSuccess={this.handleSignUp}
+          handleSignup={this.handleSignUp}
         />
         <Graphic style={rightContainerStyle} />
       </div>
