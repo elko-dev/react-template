@@ -32,10 +32,10 @@ RUN echo "ARGS is ${REACT_APP_ENV}"
 RUN echo "ARGS is ${AUTH_CONFIG}"
 
 # Move the UI server into ./build, and create a public/ folder to serve from
-COPY --from=build public ./public
-# Need to do this so the Firebase config can be generated at runtime (don't have to keep static credentials)
-COPY --from=build scripts ./scripts
-COPY --from=build node_modules ./node_modules
+# COPY --from=build public ./public
+# # Need to do this so the Firebase config can be generated at runtime (don't have to keep static credentials)
+# COPY --from=build scripts ./scripts
+# COPY --from=build node_modules ./node_modules
 
-COPY --from=build build ./build
+# COPY --from=build build ./build
 CMD npm run serve
