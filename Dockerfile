@@ -19,7 +19,6 @@ COPY --from=build public ./public
 # Need to do this so the Firebase config can be generated at runtime (don't have to keep static credentials)
 COPY --from=build scripts ./scripts
 COPY --from=build node_modules ./node_modules
-COPY --from=build jsconfig.json ./jsconfig.json
 
 COPY --from=build src ./src
 CMD npm run start
