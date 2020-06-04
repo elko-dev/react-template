@@ -5,6 +5,11 @@ FROM node:12 AS build
 
 COPY . ./
 
+EXPOSE 3000
+
+## Second stage image
+FROM node:12
+
 ARG REACT_APP_ENV
 ENV REACT_APP_ENV=$REACT_APP_ENV
 RUN echo "ARGS is ${REACT_APP_ENV}"
@@ -16,10 +21,6 @@ RUN echo "ARGS is ${AUTH_CONFIG}"
 RUN npm ci
 RUN npm run build
 
-EXPOSE 3000
-
-## Second stage image
-FROM node:12
 COPY package.json ./
 
 ARG REACT_APP_ENV
