@@ -65,3 +65,4 @@ tasks:
       environment:
         HEROKU_API_KEY: ${HEROKU_API_KEY}
         APP_NAME: myapp-${ENV}
+        REACT_APP_ENV: ${ENV}
