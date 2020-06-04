@@ -2,4 +2,5 @@
 
 set -euo pipefail
 
-npm ci && npm test
+# The postinstall does not seem to be firing when in batect container
+npm ci && npm run postinstall && npm test
