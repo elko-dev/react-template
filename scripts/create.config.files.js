@@ -8,7 +8,7 @@ const projectName = process.argv.slice(2)[0];
 const webAppName = process.argv.slice(2)[1];
 function getAccessToken() {
     return new Promise(function (resolve, reject) {
-        var key = require('./config/spawn-platform.json');
+        var key = require('../config/spawn-platform.json');
         var jwtClient = new google.auth.JWT(
             key.client_email,
             null,

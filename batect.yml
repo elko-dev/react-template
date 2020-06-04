@@ -55,6 +55,7 @@ tasks:
       command: ./scripts/local.sh
       environment:
         AUTH_CONFIG: ${AUTH_CONFIG}
+        REACT_APP_ENV: local
   deploy:
     description: Deploy app
     group: Deploy tasks
