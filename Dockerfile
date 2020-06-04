@@ -3,12 +3,13 @@ ARG AUTH_CONFIG="config"
 
 FROM node:12 AS build
 
-COPY . ./
-
 EXPOSE 3000
 
 ## Second stage image
 FROM node:12
+
+## Refactor to use build args?
+COPY . ./
 
 ARG REACT_APP_ENV
 ENV REACT_APP_ENV=$REACT_APP_ENV
@@ -18,10 +19,10 @@ ARG AUTH_CONFIG
 ENV AUTH_CONFIG=$AUTH_CONFIG
 RUN echo "ARGS is ${AUTH_CONFIG}"
 
+COPY package.json ./
+
 RUN npm ci
 RUN npm run build
-
-COPY package.json ./
 
 ARG REACT_APP_ENV
 ENV REACT_APP_ENV=$REACT_APP_ENV
