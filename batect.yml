@@ -38,6 +38,7 @@ tasks:
       command: ./scripts/test.sh
       environment:
         AUTH_CONFIG: ${AUTH_CONFIG}
+        REACT_APP_ENV: local
   testWatch:
     description: Run unit tests for application
     group: Test tasks
