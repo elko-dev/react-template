@@ -19,7 +19,7 @@ function getUrl(): string {
     console.error(
       'REACT_APP_ENV variable was undefined.  We need this to select the correct environment specific variables'
     );
-    process.exit(1);
+    return '';
   }
   console.log(key);
   return urlMap[key];
