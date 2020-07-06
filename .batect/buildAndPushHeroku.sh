@@ -9,7 +9,7 @@ echo "logging into Heroku..."
 docker login --username=_ --password=$HEROKU_API_KEY registry.heroku.com
 
 echo "building latest image..."
-docker build -t  "registry.heroku.com/$APP_NAME/web" .
+docker build --build-arg REACT_APP_ENV=${ENVIRONMENT} --build-arg AUTH_CONFIG=${AUTH_CONFIG} -t  "registry.heroku.com/$APP_NAME/web" .
 
 echo "Pushing registry.heroku.com/$APP_NAME/web to heroku registry"
 docker push "registry.heroku.com/$APP_NAME/web"
