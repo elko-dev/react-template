@@ -69,3 +69,11 @@ tasks:
         REACT_APP_ENV: ${ENV}
         ENVIRONMENT: ${ENV}
         AUTH_CONFIG: ${AUTH_CONFIG}
+  qualityScan:
+    description: Code Quality Scan
+    group: Test tasks
+    run:
+      container: build-env
+      command: node sonar-scan.js
+      environment:
+        CODE_QUALITY_TOKEN: ${CODE_QUALITY_TOKEN}
