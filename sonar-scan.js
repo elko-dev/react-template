@@ -7,8 +7,8 @@ scanner(
     options: {
       'sonar.projectName': 'myapp',
       'sonar.projectDescription': 'myapp express project',
-      'sonar.sources': 'dist',
-      'sonar.tests': '__tests__'
+      'sonar.sources': 'build',
+      'sonar.tests': 'src'
     }
   },
   () => process.exit()
