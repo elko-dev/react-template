@@ -8,6 +8,8 @@ scanner(
       'sonar.projectName': 'myapp',
       'sonar.projectDescription': 'myapp express project',
       'sonar.sources': 'src',
+      "sonar.exclusions":"src/**/*.spec.ts",
+      "sonar.test.inclusions":"src/**/*.spec.ts",
       'sonar.tests': 'src'
     }
   },
