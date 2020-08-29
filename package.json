@@ -43,12 +43,14 @@
     "husky": "^4.2.5",
     "lint-staged": "^10.2.7",
     "prettier": "^2.0.5",
+    "rimraf": "^3.0.2",
     "sonarqube-scanner": "^2.7.0"
   },
   "scripts": {
     "start": "react-scripts start",
     "serve": "./scripts/serve.sh",
     "build": "react-scripts build",
+    "clean": "rimraf node_modules build .scannerwork",
     "test": "react-scripts test --watchAll=false",
     "prettier:base": "prettier --parser typescript",
     "prettier": "npm run prettier:base -- --list-different \"src/**/*.{ts,tsx,js}\"",
